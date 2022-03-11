@@ -7,14 +7,17 @@ import UsefulLinks from './UsefulLinks'
 
 function Footer() {
     return (
-        <Container>
-            <Wrap>
-                <SubSection />
-                <SocialMedia />
-                <UsefulLinks />
-                <NewsLetter />
-            </Wrap>
-        </Container>
+        <>
+            <Container>
+                <Wrap>
+                    <SubSection />
+                    <SocialMedia />
+                    <UsefulLinks />
+                    <NewsLetter />
+                </Wrap>
+            </Container>
+            <Bottom>Ember | 2022 </Bottom>
+        </>
     )
 }
 
@@ -45,4 +48,12 @@ const Wrap = styled.div`
         flex-wrap: wrap;
         
     }
+`
+
+const Bottom = styled.div`
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+    color: white;
 `

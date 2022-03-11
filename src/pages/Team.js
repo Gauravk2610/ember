@@ -1,10 +1,14 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import SubWrap from '../components/Team/SubWrap'
 
 function Team() {
     return (
         <Container>
+            <Helmet>
+                <title>Team</title>
+            </Helmet>
             <Header><h2>Ember Team</h2></Header>
             <Divider />
             <Wrapper>

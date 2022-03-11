@@ -1,9 +1,13 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
 function About() {
     return (
         <Container>
+            <Helmet>
+                <title>About Us</title>
+            </Helmet>
             <Header>About Us</Header>
         </Container>
     )

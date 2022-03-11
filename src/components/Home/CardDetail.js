@@ -21,6 +21,7 @@ function CardDetail({data}) {
 export default CardDetail
 
 const Container = styled.div`
+    margin: 32px 0;
     max-width: 400px;
     width: 100%;
     min-width: 300px;
@@ -48,6 +49,9 @@ const Title = styled.div`
     font-size: 30px;
     line-height: 35px;
     color: #000000;
+    @media(max-width: 560px) {
+        font-size: 24px
+    }
 `
 
 const Desc = styled.div`
@@ -57,6 +61,9 @@ const Desc = styled.div`
     font-size: 18px;
     line-height: 21px;
     color: #818181;
+    @media(max-width: 560px) {
+        font-size: 16px;
+    }
 `
 
 const ButtonWrapper = styled.div`

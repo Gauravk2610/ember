@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import ItemList from '../components/Home/ItemList'
 import SplitCounter from '../components/Home/SplitCounter'
@@ -32,6 +33,9 @@ function Home() {
 
     return (
         <Container>
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
             <Intro>
                 <Bg>
                     <img src='/assests/home-bg.png' />
@@ -72,7 +76,7 @@ const Bg = styled.div`
     img {
         width: 100%;
         object-fit: cover;
-        height: 100vh;
+        height: 700px;
     }
 `
 
@@ -100,12 +104,29 @@ const Content = styled.div`
     
     p {
         max-width: 360px;
+        width: 100%;
+        min-width: 260px;
         font-style: normal;
         font-weight: 400;
         font-size: 30px;
         line-height: 40px;
         color: #FFFFFF;
     }
+
+    @media(max-width: 786px) {
+        width: 100%;
+        
+        p {
+            font-size: 18px;
+            line-height: 20px;
+            
+        }
+    }
+    @media(max-width: 560px) {
+        padding: 0 24px;
+    
+    }
+
 `
 
 const Title = styled.div`
@@ -114,6 +135,9 @@ const Title = styled.div`
     font-size: 80px;
     line-height: 107px;
     color: #FFFFFF;
+    @media(max-width: 560px) {
+        font-size: 50px
+    }
 `
 
 const Register = styled.div`
@@ -161,5 +185,9 @@ const Play = styled.button`
     img {
         margin-right: -24px;
         margin-left: 10px;
+    }
+    @media(max-width: 786px) {
+        position: relative;
+        
     }
 `

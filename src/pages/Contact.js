@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
 import { toastMessage } from '../features/navbar/navbarSlice';
+import {Helmet} from "react-helmet";
 
 function Contact() {
 
@@ -20,6 +21,9 @@ function Contact() {
 
     return (
         <Container>
+            <Helmet>
+                <title>Contact Us</title>
+            </Helmet>
             <Wrap onSubmit={feedBack}>
                 <Title>Get In Touch</Title>
                 <SubTitle>Feel free to contact us in case of any queries</SubTitle>

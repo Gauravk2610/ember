@@ -34,7 +34,6 @@ const Title = styled.h1`
 `
 
 const CardWrapper = styled.div`
-    padding: 32px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
