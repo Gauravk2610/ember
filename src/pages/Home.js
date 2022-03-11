@@ -1,16 +1,57 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import ItemList from '../components/Home/ItemList'
 import SplitCounter from '../components/Home/SplitCounter'
 
+const eventData = [
+    {
+        title: 'RoboSoccer',
+        img: 'events/soccer',
+        redirect: '/events/robosoccer',
+        desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit."
+    },
+    {
+        title: 'RoboSoccer',
+        img: 'events/soccer',
+
+        redirect: '/events/roboscooer',
+        desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit."
+    },
+    {
+        title: 'RoboSoccer',
+        img: 'events/soccer',
+
+        redirect: '/events/roboscooer',
+        desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit."
+    },
+]
+
 function Home() {
+
+    const [play, setPlay] = useState(false)
+
     return (
         <Container>
             <Intro>
                 <Bg>
-                    <img src='http://www.atharvacoe.ac.in/wp-content/uploads/07.jpg' />
+                    <img src='/assests/home-bg.png' />
                 </Bg>
+                <MainBg show={play}>
+                    <Content>
+                        <Title>EMBER</Title>
+                        <p>Amet minim mollit non
+                        deserunt ullamco est sit
+                        aliqua dolor do amet sint.
+                        Velit officia consequat duis
+                        enim velit mollit.</p>
+                        <Register>Register Now</Register>
+                    </Content>
+                    <Play onClick={setPlay} show={play}>PLAY <img src="/assests/play.png" alt="play" /></Play>
+                </MainBg>
             </Intro>
             <SplitCounter />
+            <ItemList title={'Events'} data={eventData} redirect={'/events'} />
+            <ItemList title={'Workshop'} data={eventData} redirect={'/workshop'} />
         </Container>
     )
 }
@@ -22,14 +63,103 @@ const Container = styled.div`
 `
 
 const Intro = styled.div`
-
+    position: relative;
 
 `
 
 const Bg = styled.div`
+    position: relative;
     img {
         width: 100%;
         object-fit: cover;
-        height: 46vw;
+        height: 100vh;
+    }
+`
+
+const MainBg = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    transform:  ${props => props.show ? 'translateX(-100%)' : 'translateX(0)'} ;
+    transition: transform 500ms ease-in-out;
+    transition-delay: 500ms;
+    /* background: linear-gradient(90.07deg, rgba(4, 4, 4, 0.7) 0.06%, rgba(255, 255, 255, 0) 99.94%); */
+`
+
+const Content = styled.div`
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90.22deg, rgba(255, 255, 255, 0.3) 0.18%, rgba(255, 255, 255, 0.3) 99.8%);
+    border-right: 6px solid #FFFFFF;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 64px;
+    
+    p {
+        max-width: 360px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 40px;
+        color: #FFFFFF;
+    }
+`
+
+const Title = styled.div`
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 107px;
+    color: #FFFFFF;
+`
+
+const Register = styled.div`
+    margin-top: 36px;
+    margin-bottom: 120px;
+    width: 239px;
+    height: 54px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 999px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+`
+
+const Play = styled.button`
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 120px;
+    margin: 0 auto;
+    width: 150px;
+    height: 50px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: ${props => props.show ? 0 : 1};
+    transform:  ${props => props.show ? 'translateY(100%)' : 'translateY(0)'} ;
+    transition: all 500ms ease-in;
+
+    img {
+        margin-right: -24px;
+        margin-left: 10px;
     }
 `
