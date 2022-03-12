@@ -63,7 +63,7 @@ const Counter = styled.div`
     padding: 20px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0px 0px 40px white; 
+    /* box-shadow: 0px 0px 40px white;  */
     transition: transform 0.3s;
 
     :hover {

@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import ItemList from '../components/Home/ItemList'
 import SplitCounter from '../components/Home/SplitCounter'
+import videoIntro from '../assests/Intro.mp4'
 
 const eventData = [
     {
@@ -30,6 +31,7 @@ const eventData = [
 function Home() {
 
     const [play, setPlay] = useState(false)
+    const videoControl = useRef(null)
 
     return (
         <Container>
@@ -38,7 +40,10 @@ function Home() {
             </Helmet>
             <Intro>
                 <Bg>
-                    <img src='/assests/home-bg.png' />
+                    <video ref={videoControl} loop muted >
+                        <source src={videoIntro} type="video/mp4" />
+                    </video>
+                    {/* <img src='/assests/home-bg.png' /> */}
                 </Bg>
                 <MainBg show={play}>
                     <Content>
@@ -50,7 +55,11 @@ function Home() {
                         enim velit mollit.</p>
                         <Register>Register Now</Register>
                     </Content>
-                    <Play onClick={setPlay} show={play}>PLAY <img src="/assests/play.png" alt="play" /></Play>
+                    <Play onClick={() => {
+                        setPlay(true)
+                        videoControl.current.play()
+                    }} 
+                        show={play}>PLAY <img src="/assests/play.png" alt="play" /></Play>
                 </MainBg>
             </Intro>
             <SplitCounter />
@@ -73,7 +82,7 @@ const Intro = styled.div`
 
 const Bg = styled.div`
     position: relative;
-    img {
+    img, video {
         width: 100%;
         object-fit: cover;
         height: 700px;

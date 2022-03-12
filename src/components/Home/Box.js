@@ -1,54 +1,66 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import CountUp, { useCountUp } from 'react-countup';
+import VisibilitySensor  from 'react-visibility-sensor'
 
 function Box({img, count, title}) {
 
     const [counter, setCounter] = useState(true)
     const countUpRef = React.useRef(null);
-    const { start, pauseResume, reset, update } = useCountUp({
-      ref: countUpRef,
-      start: 0,
-      end: count,
-      delay: 1000,
-      duration: 2,
-      startOnMount: false
+    // const { start, pauseResume, reset, update } = useCountUp({
+    //   ref: countUpRef,
+    //   start: 0,
+    //   end: count,
+    //   delay: 1000,
+    //   duration: 2,
+    //   startOnMount: false
 
-    });    
+    // });    
 
-    const triggerCounter = () => {
+    // const triggerCounter = () => {
 
-        const countersection = document.getElementsByClassName('CounterWrap')[0]
-        const { pageYOffset } = window;
+    //     const countersection = document.getElementsByClassName('CounterWrap')[0]
+    //     const { pageYOffset } = window;
 
         
-        const sectionTop = countersection.offsetTop;
-        const sectionHeight = countersection.offsetHeight;
+    //     const sectionTop = countersection.offsetTop;
+    //     const sectionHeight = countersection.offsetHeight;
 
-        if ((pageYOffset >= (sectionTop - sectionHeight/2))) {
-                // setCounter(false)
-            start()
-            window.removeEventListener('scroll', triggerCounter)
+    //     if ((pageYOffset >= (sectionTop - sectionHeight/2))) {
+    //             // setCounter(false)
+    //         start()
+    //         window.removeEventListener('scroll', triggerCounter)
                 
-            // trigger.click()
+    //         // trigger.click()
 
-        }
-        // } )
+    //     }
+    //     // } )
 
-    }
+    // }
 
-    useEffect(() => {
-        window.addEventListener('scroll', triggerCounter)
-        return () => {
-            window.removeEventListener('scroll', triggerCounter)
-        }
-    }, [])
+    // useEffect(() => {
+    //     window.addEventListener('scroll', triggerCounter)
+    //     return () => {
+    //         window.removeEventListener('scroll', triggerCounter)
+    //     }
+    // }, [])
 
     return (
         <Container>
             <StyleImg src={img}/>
             <Wrap className='CounterWrap'>
             <div>
+                <CountUp duration={2} end={count} >
+                    {({ countUpRef, start }) => (
+                        <VisibilitySensor onChange={start}>
+                            <div className='count'>
+                                <span style={{ fontSize: '2.0rem' }} ref={countUpRef} />
+                                <span>+</span>
+                            {/* <button  onClick={start}>Start</button> */}
+                            </div>
+                    </VisibilitySensor> 
+                    )}
+                    </CountUp>
                 <div className='count' ref={countUpRef} style={{fontSize: '2.0em'}} />
             </div>
                 <Title>

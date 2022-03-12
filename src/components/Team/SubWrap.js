@@ -58,7 +58,7 @@ const teamList = [
             {
                 'title': 'Manasvi Patil',
                 'img': 'https://th.bing.com/th/id/OIP.ey-3jS9s1-8_fteFv78vnQHaEK?w=284&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7',
-                'post': 'Venture Head',
+                'post': 'Documentation Head',
                 'status': null,
                 'email': 'manasvipatil2001@gmail.com',
                 'insta': 'http://instagram.com/manasvipatil__?utm_source=qr',
