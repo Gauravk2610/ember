@@ -167,6 +167,7 @@ const Card = styled.div`
     padding: 24px;
     width: 100%;
     min-height: 250px;
+    height: fit-content;
     background: #FFFFFF;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
     border-radius: 20px;

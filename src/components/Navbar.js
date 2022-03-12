@@ -42,9 +42,9 @@ function Navbar() {
             'link': 'initiatives'
         },
         {
-            'title': 'What we do',
+            'title': 'Workshops',
             'icon': <GroupWorkRounded />,
-            'link': 'whatwedo'
+            'link': 'workshops'
         },
         {
             'title': 'Events',

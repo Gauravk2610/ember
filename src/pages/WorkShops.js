@@ -2,7 +2,7 @@ import React from 'react'
 import DisplayCard from '../components/DisplayCard'
 import styled from 'styled-components'
 
-const EventList = [
+const WorkShopList = [
     {
         title: 'ROBO SOCCER',
         desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit.",
@@ -21,7 +21,7 @@ const EventList = [
     },
 ]
 
-function Events() {
+function WorkShops() {
   return (
     <Container>
         {
@@ -31,7 +31,7 @@ function Events() {
   )
 }
 
-export default Events
+export default WorkShops
 
 const Container = styled.div`
     margin: 32px 46px;

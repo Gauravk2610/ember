@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router-dom'
 import Footer from './components/Home/Footer';
 import About from './pages/About';
 import Team from './pages/Team';
@@ -12,6 +12,17 @@ import Events from './pages/Events';
 import Initiatives from './pages/Initiatives';
 
 function App() {
+
+  
+  const _404 = () => {
+    const history = useHistory()
+    history.push('/')
+    return(
+      <>
+      </>
+    )
+  }
+
   return (
     <div className="App">
       <Router>
@@ -20,6 +31,9 @@ function App() {
         <Switch>
           <Route path='/initiatives' exact>
             <Initiatives />
+          </Route>
+          <Route path='/workshops' exact>
+            <Events />
           </Route>
           <Route path='/events' exact>
             <Events />
@@ -37,7 +51,7 @@ function App() {
             <Home />
           </Route>
           <Route path='*' exact>
-            <h1>404</h1>
+            <_404 />
           </Route>
         </Switch>
         <Footer />

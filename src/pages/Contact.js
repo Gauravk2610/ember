@@ -11,7 +11,10 @@ function Contact() {
     const feedBack = (e) => {
         e.preventDefault();
         console.log(e.target.email.value)
+        e.target.subject.value = null
+        e.target.name.value = null
         e.target.email.value = null
+        e.target.message.value = null
         dispatch(toastMessage(({trigger: true, message: 'Will get back to you soon'})))
         setTimeout(() => {
             dispatch(toastMessage(({trigger: false, message: null})))
@@ -29,12 +32,12 @@ function Contact() {
                 <SubTitle>Feel free to contact us in case of any queries</SubTitle>
                 <Content>
                     <Left>
-                        <input type="text" placeholder='Name' required />
+                        <input type="text" id='name' placeholder='Name' required />
                         <input type="text" className='email' id='email'  placeholder='Email-Id' required />
-                        <input type="text" placeholder='Subject' required />
+                        <input type="text" id='subject' placeholder='Subject' required />
                     </Left>
                     <Right>
-                        <textarea name="" id="" required placeholder='Message'></textarea>
+                        <textarea name="" id="message" required placeholder='Message'></textarea>
                     </Right>
                 </Content>
                 <SubmitButton>
