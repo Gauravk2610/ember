@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import GooglePayButton from '@google-pay/button-react'
 
 function DisplayCard({data}) {
   return (
@@ -10,7 +11,45 @@ function DisplayCard({data}) {
             <Desc>{data.desc}</Desc>
             <Date>{data.date}</Date>
             <Rate>ENTRY FEE:- ₹ {data.rate}</Rate>
-            <Register>Register Now</Register>
+            <GooglePayButton
+  environment="TEST"
+  buttonType='buy'
+  paymentRequest={{
+    apiVersion: 2,
+    apiVersionMinor: 0,
+    allowedPaymentMethods: [
+      {
+        type: 'CARD',
+        parameters: {
+          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+          allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "MIR", "VISA"],
+        },
+        tokenizationSpecification: {
+          type: 'PAYMENT_GATEWAY',
+          parameters: {
+            gateway: 'example',
+            gatewayMerchantId: 'exampleGatewayMerchantId',
+          },
+        },
+      },
+    ],
+    merchantInfo: {
+      merchantId: '12345678901234567890',
+      merchantName: 'Demo Merchant',
+    },
+    shippingAddressRequired: true,
+    transactionInfo: {
+      totalPriceStatus: 'FINAL',
+      totalPriceLabel: 'Total',
+      totalPrice: '100.00',
+      currencyCode: 'USD',
+      countryCode: 'US',
+    },
+  }}
+  onLoadPaymentData={paymentRequest => {
+    console.log('load payment data', paymentRequest);
+  }}
+/>
         </Right>
     </Container>
   )
