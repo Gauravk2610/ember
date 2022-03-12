@@ -8,6 +8,8 @@ import About from './pages/About';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
 import SuccessMessage from './components/Home/SuccessMessage'
+import Events from './pages/Events';
+import Initiatives from './pages/Initiatives';
 
 function App() {
   return (
@@ -16,6 +18,12 @@ function App() {
         <Navbar />
         <SuccessMessage />
         <Switch>
+          <Route path='/initiatives' exact>
+            <Initiatives />
+          </Route>
+          <Route path='/events' exact>
+            <Events />
+          </Route>
           <Route path='/team' exact>
             <Team />
           </Route>
@@ -27,6 +35,9 @@ function App() {
           </Route>
           <Route path='/' exact>
             <Home />
+          </Route>
+          <Route path='*' exact>
+            <h1>404</h1>
           </Route>
         </Switch>
         <Footer />

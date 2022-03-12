@@ -53,12 +53,15 @@ const Container = styled.div`
     justify-content: center;
 `
     
-    const Wrap = styled.form`
+const Wrap = styled.form`
     padding: 30px;
     width: 70%;
     // background-color: rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
     // color: white;
+    @media(max-width: 560px){
+        width: 98%;
+    }
 `
 
 const Title = styled.h1`
@@ -100,6 +103,12 @@ const Left = styled.div`
     input:active, input:focus {
         box-shadow: 0px 0px 10px rgba(255, 255, 255);
     }
+
+    @media(max-width: 560px) {
+        input {
+            width: 96%
+        }
+    }
 `
 
 const Right = styled.div`
@@ -114,12 +123,18 @@ const Right = styled.div`
         padding: 16px;        
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
         border-radius: 10px;
+        outline-width: 1px;
         outline-color: rgb(45,136,255,0.7);
         transition: box-shadow 400ms, outline-color 400ms;
         border: none;
     }
     textarea:active, textarea:focus {
         box-shadow: 0px 0px 10px rgba(255, 255, 255);
+    }
+    @media(max-width: 560px) {
+        textarea {
+            width: 96%;;
+        }
     }
 `
 

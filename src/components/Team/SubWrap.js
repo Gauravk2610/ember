@@ -110,6 +110,17 @@ const teamList = [
                 'tweet': null,
                 'fb': 'https://www.facebook.com/sai.bhatkar.52'
             },
+            {
+                'title': 'Pranav Trivedi',
+                'img': 'https://th.bing.com/th/id/OIP.ey-3jS9s1-8_fteFv78vnQHaEK?w=284&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7',
+                'post': 'Assistant Technical Head',
+                'status': null,
+                'email': 'saibhatkar999@gmail.com ',
+                'insta': 'https://www.instagram.com/_saibhatkar_99/',
+                'linkdein': 'https://www.linkedin.com/in/sai-bhatkar-6084901a7/',
+                'tweet': null,
+                'fb': 'https://www.facebook.com/sai.bhatkar.52'
+            },
             
         ]
     },

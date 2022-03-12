@@ -1,4 +1,4 @@
-import { ArchiveRounded, BusinessCenterRounded, Close, ContactsRounded, DashboardRounded, GroupRounded, GroupsRounded, GroupWorkRounded, HomeRounded } from '@mui/icons-material'
+import { ArchiveRounded, BusinessCenterRounded, EventAvailable, Close, ContactsRounded, DashboardRounded, GroupRounded, GroupsRounded, GroupWorkRounded, HomeRounded } from '@mui/icons-material'
 import { IconButton } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
@@ -47,9 +47,9 @@ function Navbar() {
             'link': 'whatwedo'
         },
         {
-            'title': 'Archives',
-            'icon': <ArchiveRounded />,
-            'link': 'archives'
+            'title': 'Events',
+            'icon': <EventAvailable />,
+            'link': 'events'
         },
     ]
 
@@ -116,9 +116,12 @@ function Navbar() {
                         <BurgerSection
                             key={index} 
                             isFocused={list.title == active} 
-                            onClick={()=>setActive(list.title)}
+                            onClick={()=>{
+                                setActive(list.title)
+                                setSideMenu(false)
+                            }}
                         >
-                            <a href="#">{list.icon}<p>{list.title}</p></a>
+                            <NavLink to={list.link}>{list.icon}<p>{list.title}</p></NavLink>
                         </BurgerSection>
                     ))}
                     
@@ -126,9 +129,12 @@ function Navbar() {
                         <BurgerSection
                             key={index} 
                             isFocused={list.title == active} 
-                            onClick={()=>setActive(list.title)}
+                            onClick={()=>{
+                                setActive(list.title)
+                                setSideMenu(false)
+                            }}
                         >
-                            <a href="#">{list.icon}<p>{list.title}</p></a>
+                            <NavLink to={list.link}>{list.icon}<p>{list.title}</p></NavLink>
                         </BurgerSection>
                     ))}
                 </Wrap>
