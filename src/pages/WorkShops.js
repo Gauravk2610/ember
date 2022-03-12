@@ -7,7 +7,7 @@ const WorkShopList = [
         title: 'ROBO SOCCER',
         desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit.",
         date: '3 - 6 April',
-        rate: '30',
+        rate: 30,
         bg: 'bg-soccer.png',
         poster: 'banner-soccer.png'
     },
