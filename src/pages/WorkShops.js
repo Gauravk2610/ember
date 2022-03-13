@@ -27,6 +27,7 @@ function WorkShops() {
         {
             EventList.map((event, index) => <DisplayCard key={index} data={event} />)
         }
+        
     </Container>
   )
 }

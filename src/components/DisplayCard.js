@@ -1,8 +1,81 @@
 import React from 'react'
 import styled from 'styled-components'
 import GooglePayButton from '@google-pay/button-react'
+import axios from 'axios';
 
 function DisplayCard({data}) {
+    
+    function loadScript(src) {
+        return new Promise((resolve) => {
+            const script = document.createElement("script");
+            script.src = src;
+            script.onload = () => {
+                resolve(true);
+            };
+            script.onerror = () => {
+                resolve(false);
+            };
+            document.body.appendChild(script);
+        });
+    }
+
+    async function displayRazorpay() {
+        const res = await loadScript(
+            "https://checkout.razorpay.com/v1/checkout.js"
+        );
+
+        if (!res) {
+            alert("Razorpay SDK failed to load. Are you online?");
+            return;
+        }
+
+        const result = await axios.post("http://localhost:3001/order");
+
+        if (!result) {
+            alert("Server error. Are you online?");
+            return;
+        }
+
+        const { amount, id: order_id, currency } = result.data;
+
+        const options = {
+            key: "rzp_test_gHr3lkGYuNT6RI", // Enter the Key ID generated from the Dashboard
+            amount: amount.toString(),
+            currency: currency,
+            name: "Soumya Corp.",
+            description: "Test Transaction",
+            // image: { logo },
+            order_id: order_id,
+            handler: async function (response) {
+                const data = {
+                    orderCreationId: order_id,
+                    razorpayPaymentId: response.razorpay_payment_id,
+                    razorpayOrderId: response.razorpay_order_id,
+                    razorpaySignature: response.razorpay_signature,
+                };
+
+                const result = await axios.post("http://localhost:5000/success", data);
+
+                alert(result.data.msg);
+            },
+            prefill: {
+                name: "Gaurav Konde",
+                email: "gauravkonde26@gmail.com",
+                contact: "9987882211",
+            },
+            notes: {
+                address: "Soumya Dey Corporate Office",
+            },
+            theme: {
+                color: "#61dafb",
+            },
+        };
+
+        const paymentObject = new window.Razorpay(options);
+        paymentObject.open();
+    }
+
+
   return (
     <Container bg={data.bg}>
         <Left src={'/assests/events/'+data.poster} />
@@ -11,44 +84,45 @@ function DisplayCard({data}) {
             <Desc>{data.desc}</Desc>
             <Date>{data.date}</Date>
             <Rate>ENTRY FEE:- ₹ {data.rate}</Rate>
-            <GooglePayButton
-  environment="TEST"
-  buttonType='buy'
-  paymentRequest={{
-    apiVersion: 2,
-    apiVersionMinor: 0,
-    allowedPaymentMethods: [
-      {
-        type: 'CARD',
-        parameters: {
-          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-          allowedCardNetworks: ['MASTERCARD', 'VISA'],
-        },
-        tokenizationSpecification: {
-          type: 'PAYMENT_GATEWAY',
-          parameters: {
-            gateway: 'example',
-            gatewayMerchantId: 'exampleGatewayMerchantId',
-          },
-        },
-      },
-    ],
-    merchantInfo: {
-      merchantId: '12345678901234567890',
-      merchantName: 'Demo Merchant',
-    },
-    transactionInfo: {
-      totalPriceStatus: 'FINAL',
-      totalPriceLabel: 'Total',
-      totalPrice: data.rate,
-      currencyCode: 'USD',
-      countryCode: 'US',
-    },
-  }}
-  onLoadPaymentData={paymentRequest => {
-    console.log('load payment data', paymentRequest);
-  }}
-/>
+            <Register onClick={displayRazorpay} >Register Now</Register>
+            {/* <GooglePayButton
+                environment="TEST"
+                buttonType='buy'
+                paymentRequest={{
+                    apiVersion: 2,
+                    apiVersionMinor: 0,
+                    allowedPaymentMethods: [
+                    {
+                        type: 'CARD',
+                        parameters: {
+                        allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                        allowedCardNetworks: ['MASTERCARD', 'VISA'],
+                        },
+                        tokenizationSpecification: {
+                        type: 'PAYMENT_GATEWAY',
+                        parameters: {
+                            gateway: 'example',
+                            gatewayMerchantId: 'exampleGatewayMerchantId',
+                        },
+                        },
+                    },
+                    ],
+                    merchantInfo: {
+                    merchantId: '12345678901234567890',
+                    merchantName: 'Demo Merchant',
+                    },
+                    transactionInfo: {
+                    totalPriceStatus: 'FINAL',
+                    totalPriceLabel: 'Total',
+                    totalPrice: data.rate,
+                    currencyCode: 'USD',
+                    countryCode: 'US',
+                    },
+                }}
+                onLoadPaymentData={paymentRequest => {
+                    console.log('load payment data', paymentRequest);
+                }}
+            /> */}
         </Right>
     </Container>
   )
