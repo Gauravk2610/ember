@@ -106,7 +106,7 @@ function CardDetail({data}) {
             <Title>{data.title}</Title>
             <Desc>{data.desc}</Desc>
             <ButtonWrapper>
-                <Register onClick={registerEvent}>Register</Register>
+                <Register onClick={setOpen}>Register</Register>
                 <View href={data.redirect}>View</View>
             </ButtonWrapper>
         </Content>
@@ -190,7 +190,7 @@ const ButtonWrapper = styled.div`
     align-items: center;
 `
 
-const Register = styled.a`
+const Register = styled.button`
     width: 164px;
     height: 41px;
     display: flex;
@@ -200,8 +200,11 @@ const Register = styled.a`
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 999px;
     font-weight: 400;
+    border: none;
+    outline: none;
     font-size: 18px;
     line-height: 21px;
+    cursor: pointer;
     color: #FFFFFF;
 `
 
