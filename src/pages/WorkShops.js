@@ -1,6 +1,7 @@
 import React from 'react'
 import DisplayCard from '../components/DisplayCard'
 import styled from 'styled-components'
+import Helmet from 'react-helmet'
 
 const WorkShopList = [
     {
@@ -24,8 +25,11 @@ const WorkShopList = [
 function WorkShops() {
   return (
     <Container>
+        <Helmet>
+            <title>Workshops</title>
+        </Helmet>
         {
-            EventList.map((event, index) => <DisplayCard key={index} data={event} />)
+            EventList.map((event, index) => <DisplayCard key={index} data={event} type={'workshops'} />)
         }
         
     </Container>

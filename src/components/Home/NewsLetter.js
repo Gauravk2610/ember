@@ -2,14 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
 import { toastMessage } from '../../features/navbar/navbarSlice';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../firebase';
 
 function NewsLetter() {
     const dispatch = useDispatch();
 
     
-    const Subscription = (e) => {
+    const Subscription = async(e) => {
         e.preventDefault();
-        console.log(e.target.email.value)
+        const email = e.target.email.value
+        addDoc(collection(db, 'newsletter'), {
+            email: email,
+            timestamp: serverTimestamp()
+        })
+
         e.target.email.value = null
         dispatch(toastMessage(({trigger: true, message: 'Thanks For Subscribing'})))
         setTimeout(() => {

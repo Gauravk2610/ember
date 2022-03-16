@@ -1,25 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
 import { toastMessage } from '../features/navbar/navbarSlice';
 import {Helmet} from "react-helmet";
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { db } from '../firebase'
 
 function Contact() {
 
     const dispatch = useDispatch()
+    const [loading, setLoading] = useState(false)
 
-    const feedBack = (e) => {
+    const feedBack = async(e) => {
         e.preventDefault();
-        console.log(e.target.email.value)
-        e.target.subject.value = null
-        e.target.name.value = null
-        e.target.email.value = null
-        e.target.message.value = null
+        setLoading(true)
+        const target = e.target
+        const name = target.name.value   
+        const email = target.email.value
+        const phone = target.phone.value
+        const message = target.message.value
+
+        await addDoc(collection(db, 'contactus'), {
+            name: name,
+            email: email,
+            phone: phone,
+            message: message,
+            timestamp: serverTimestamp()
+        })
+
+
+        target.phone.value = null
+        target.name.value = null
+        target.email.value = null
+        target.message.value = null
+        setLoading(false)
         dispatch(toastMessage(({trigger: true, message: 'Will get back to you soon'})))
         setTimeout(() => {
             dispatch(toastMessage(({trigger: false, message: null})))
         }, 2000);
-
     }
 
     return (
@@ -34,14 +52,15 @@ function Contact() {
                     <Left>
                         <input type="text" id='name' placeholder='Name' required />
                         <input type="text" className='email' id='email'  placeholder='Email-Id' required />
-                        <input type="text" id='subject' placeholder='Subject' required />
+                        <input type="text" id='college' placeholder='College Name' required />
+                        <input type="text" id='phone' placeholder='Phone No' maxLength={10} required />
                     </Left>
                     <Right>
-                        <textarea name="" id="message" required placeholder='Message'></textarea>
+                        <textarea name="" id="message" required placeholder='Write your query'></textarea>
                     </Right>
                 </Content>
                 <SubmitButton>
-                    <button type='submit'>Send Message</button></SubmitButton>
+                    <button style={{ opacity: loading ? 0.4 : 1 }} disabled={loading} type='submit'>Send Message</button></SubmitButton>
             </Wrap>
         </Container>
     )

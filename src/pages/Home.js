@@ -9,21 +9,21 @@ const eventData = [
     {
         title: 'RoboSoccer',
         img: 'events/soccer',
-        redirect: '/events/robosoccer',
+        redirect: '/events',
         desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit."
     },
     {
         title: 'RoboSoccer',
         img: 'events/soccer',
 
-        redirect: '/events/roboscooer',
+        redirect: '/events',
         desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit."
     },
     {
         title: 'RoboSoccer',
         img: 'events/soccer',
 
-        redirect: '/events/roboscooer',
+        redirect: '/events',
         desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit."
     },
 ]
