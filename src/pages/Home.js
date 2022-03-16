@@ -10,19 +10,20 @@ const eventData = [
         title: 'RoboSoccer',
         img: 'events/soccer',
         redirect: '/events',
+        rate: 30,
         desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit."
     },
     {
         title: 'RoboSoccer',
         img: 'events/soccer',
-
+        rate: 30,
         redirect: '/events',
         desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit."
     },
     {
         title: 'RoboSoccer',
         img: 'events/soccer',
-
+        rate: 30,
         redirect: '/events',
         desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit."
     },
