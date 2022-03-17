@@ -90,6 +90,14 @@ const Bg = styled.div`
         object-fit: cover;
         height: 700px;
     }
+
+    @media(max-width: 560px) {
+        img, video {
+            width: 100%;
+            object-fit: contain;
+            height: auto;
+        }
+    }
 `
 
 const MainBg = styled.div`
@@ -136,7 +144,6 @@ const Content = styled.div`
     }
     @media(max-width: 560px) {
         padding: 0 24px;
-    
     }
 
 `
@@ -148,7 +155,9 @@ const Title = styled.div`
     line-height: 107px;
     color: #FFFFFF;
     @media(max-width: 560px) {
-        font-size: 50px
+        font-size: 50px;
+        line-height: 60px;
+
     }
 `
 
@@ -169,6 +178,9 @@ const Register = styled.div`
     font-size: 20px;
     line-height: 23px;
     color: #000000;
+    @media(max-width: 560px) {
+        display: none;
+    }
 `
 
 const Play = styled.button`
