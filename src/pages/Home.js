@@ -7,25 +7,27 @@ import videoIntro from '../assests/Intro.mp4'
 
 const eventData = [
     {
-        title: 'RoboSoccer',
-        img: 'events/soccer',
+        title: 'Robo Soccer',
+        img: 'events/Soccer-bg',
+        rate: 50,
         redirect: '/events',
-        rate: 30,
-        desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit."
+        desc: "There will be a football arena where two players will compete with each other for the maximum goals. Goals shall be made by pushing the ball towards the goal post by the robot’s front only."
     },
     {
-        title: 'RoboSoccer',
-        img: 'events/soccer',
-        rate: 30,
+        title: 'Shark Tank',
+        img: 'events/Shark-bg',
+        rate: 50,
         redirect: '/events',
-        desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit."
+        desc: "Share your business mission, products, and services. State your current progress towards your plans including business model, USP",
+        
     },
     {
-        title: 'RoboSoccer',
-        img: 'events/soccer',
-        rate: 30,
+        title: 'Drone Arena',
+        img: 'events/Drone-b',
+        rate: 50,
         redirect: '/events',
-        desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit."
+        desc: "You will get a drone by which you need to complete the racetrack by avoiding the hurdles and hoops in the minimum required time. (will get one minute of free trial and demo)",
+        
     },
 ]
 

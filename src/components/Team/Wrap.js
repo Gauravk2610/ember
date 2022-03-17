@@ -9,7 +9,7 @@ function Wrap({ list }) {
             <Container key={index}>
                 <Section>
                     <Image>
-                        <img src={data.img} alt="" />
+                        <img src={'/assests/Team/' + data.img} alt="" />
                     </Image>
                     <Content>
                         <Title>{data.title}</Title>
@@ -58,7 +58,7 @@ const Image = styled.div`
         // position: absolute;;
         height: 300px;
         width: 300px;
-        object-fit: cover;
+        object-fit: contain;
     }
 
 `

@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { addDoc, collection, doc, serverTimestamp, setDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom'
 import jsPDF from 'jspdf'
 import QRCode from "qrcode";
 import { toastMessage } from '../../features/navbar/navbarSlice';
@@ -107,7 +108,9 @@ function CardDetail({data}) {
             <Desc>{data.desc}</Desc>
             <ButtonWrapper>
                 <Register onClick={setOpen}>Register</Register>
-                <View href={data.redirect}>View</View>
+                <Link to={data.redirect}>
+                    <View>View</View>
+                </Link>
             </ButtonWrapper>
         </Content>
         <Modal

@@ -177,6 +177,10 @@ function DisplayCard({data, type}) {
             <Desc>{data.desc}</Desc>
             <Date>{data.date}</Date>
             <Rate>ENTRY FEE:- ₹ {data.rate}</Rate>
+            {data.price && <Price>PRICE WORTH:- ₹ {data.price}</Price>}
+            {data.Fprice && <Fprice>1st Price:- ₹ {data.Fprice}</Fprice>}
+            {data.Sprice && <Fprice>2nd Price:- ₹ {data.Sprice}</Fprice>}
+            {data.Tprice && <Fprice>3rd Price:- ₹ {data.Tprice}</Fprice>}
             <Register onClick={setOpen} >Register Now</Register>
             <a href={qrcode} download={true} ref={downloadQrcode}>
                 <img src={qrcode}  hidden alt="" />
@@ -377,4 +381,23 @@ const ModalForm = styled.form`
         border-radius: 12px;
         cursor: pointer;
     }
+`
+
+const Price = styled.div`
+padding: 0px  0 18px;
+color: #000;
+font-weight: bold;
+font-size: 20px;
+`;
+
+const Fprice = styled.div`
+padding: 0px  0 18px;
+color: #000;
+font-weight: bold;
+font-size: 20px;
+`
+const Sprice = styled.div`
+
+`
+const Tprice = styled.div`
 `

@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import SuccessMessage from './components/Home/SuccessMessage'
 import Events from './pages/Events';
 import Initiatives from './pages/Initiatives';
+import BackToTop from './components/BackToTop';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <BackToTop />
         <Navbar />
         <SuccessMessage />
         <Switch>

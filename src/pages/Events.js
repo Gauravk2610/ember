@@ -5,18 +5,79 @@ import Helmet from 'react-helmet'
 
 const EventList = [
     {
-        title: 'ROBO SOCCER',
-        desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit.",
+        title: 'Robo Soccer',
+        desc: "There will be a football arena where two players will compete with each other for the maximum goals. Goals shall be made by pushing the ball towards the goal post by the robot’s front only. The event will be held in a tournament form so if you win you will be promoted to the next round.",
         date: '3 - 6 April',
-        rate: '30',
+        rate: '50',
+        price: '1000',
+        Fprice:  null,
+        Sprice:  null,
+        Tprice: null,
         bg: 'bg-soccer.png',
         poster: 'banner-soccer.png'
     },
     {
-        title: 'ROBO SOCCER',
-        desc: "Amet minim mollit non deserunt ullamcoest sit aliqua dolor do amet sint.Velit officia consequat duis enim velit mollit.",
+        title: 'Robo Maze',
+        desc: "A robot will be provided which need to be driven through the maze and reach the end. (car robot controlled by remote)",
         date: '3 - 6 April',
-        rate: '30',
+        rate: '50',
+        price: '1000',
+        Fprice:  null,
+        Sprice:  null,
+        Tprice: null,
+        bg: 'bg-soccer.png',
+        poster: 'Robomaze.png'
+    },
+
+    {
+        title: 'Drone Arena',
+        desc: "You will get a drone by which you need to complete the racetrack by avoiding the hurdles and hoops in the minimum required time. (will get one minute of free trial and demo)",
+        date: '3 - 6 April',
+        rate: '50',
+        price: '1000',
+        Fprice:  null,
+        Sprice:  null,
+        Tprice: null,
+        bg: 'bg-soccer.png',
+        poster: 'Dronearena.png'
+    },
+
+    {
+        title: 'Shark Tank',
+        desc: null,
+        date: '3 - 6 April',
+        rate: '50',
+        price: '1000',
+        Fprice:  null,
+        Sprice:  null,
+        Tprice: null,
+        bg: 'bg-soccer.png',
+        poster: 'banner-soccer.png'
+    },
+
+    {
+        title: 'Business Mela',
+        desc: null,
+        date: '3 - 6 April',
+        rate: '50',
+        price: '1000',
+        Fprice:  null,
+        Sprice:  null,
+        Tprice: null,
+        bg: 'bg-soccer.png',
+        poster: 'Businessmela.png'
+    },
+
+    {
+        title: 'Innovation Mela',
+        desc: null,
+        date: '3 - 6 April',
+        rate: '75',
+        price: null,
+        Fprice: '1500',
+        Sprice: '1000',
+        Tprice: '750',
+
         bg: 'bg-soccer.png',
         poster: 'banner-soccer.png'
     },
