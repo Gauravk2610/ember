@@ -171,7 +171,8 @@ function DisplayCard({data, type}) {
 
   return (
     <Container bg={data.bg}>
-        <Left src={'/assests/events/'+data.poster} />
+        <Left className='bs' src={'/assests/events/'+data.poster} />
+        <Left className='ss' src={'/assests/events/'+data.img} />
         <Right>
             <Title>{data.title}</Title>
             <Desc>{data.desc}</Desc>
@@ -266,12 +267,22 @@ const Container = styled.div`
     align-items: center;
     margin-bottom: 32px;
 
+    .ss {
+            display: none;
+        }
+
     @media(max-width: 860px) {
         flex-direction: column;
     }
 
     @media(max-width: 560px) {
         padding: 0 32px;
+        .bs {
+            display: none;
+        }
+        .ss {
+            display: flex;
+        }
     }
 `
 
@@ -286,7 +297,7 @@ const Left = styled.img`
     object-fit: cover;
     @media(max-width: 560px) {
         margin: 32px 0;
-        height: 260px;
+        height: auto;
     }
 `
 

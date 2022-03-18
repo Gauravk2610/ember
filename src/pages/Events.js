@@ -14,6 +14,7 @@ const EventList = [
         Sprice:  null,
         Tprice: null,
         bg: 'bg-soccer.png',
+        img: 'Soccer-bg.png',
         poster: 'banner-soccer.png'
     },
     {
@@ -26,6 +27,7 @@ const EventList = [
         Sprice:  null,
         Tprice: null,
         bg: 'bg-soccer.png',
+        img: 'Soccer-bg.png',
         poster: 'Robomaze.png'
     },
 
@@ -39,6 +41,7 @@ const EventList = [
         Sprice:  null,
         Tprice: null,
         bg: 'bg-soccer.png',
+        img: 'Drone-b.png',
         poster: 'Dronearena.png'
     },
 
@@ -52,6 +55,7 @@ const EventList = [
         Sprice:  null,
         Tprice: null,
         bg: 'bg-soccer.png',
+        img: 'Shark-bg.png',
         poster: 'banner-soccer.png'
     },
 
@@ -65,6 +69,7 @@ const EventList = [
         Sprice:  null,
         Tprice: null,
         bg: 'bg-soccer.png',
+        img: 'Soccer-bg.png',
         poster: 'Businessmela.png'
     },
 
@@ -77,8 +82,8 @@ const EventList = [
         Fprice: '1500',
         Sprice: '1000',
         Tprice: '750',
-
         bg: 'bg-soccer.png',
+        img: 'Soccer-bg.png',
         poster: 'banner-soccer.png'
     },
 ]
