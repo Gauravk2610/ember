@@ -171,6 +171,8 @@ const Card = styled.div`
     background: #FFFFFF;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
 `
 
 const Title = styled.div`
@@ -198,4 +200,5 @@ const Date = styled.div`
     font-size: 16px;
     line-height: 19px;
     color: #6D6D6D;
+    margin-top: auto;
 `

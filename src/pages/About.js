@@ -9,8 +9,45 @@ function About() {
             <Helmet>
                 <title>About Us</title>
             </Helmet>
-            <Header>About Us</Header>
-            <HeaderBody>
+            <Header>About Us</Header> 
+            <Wrapper>
+                <SubWrapper>
+                    <Left src={Img} />
+                    <Right>
+                        <Intro>
+                            Atharva College of Engineering has an Entrepreneurship Cell (E-Cell) 
+                            called ACE EMBER since 2008.  EMBER has a tie-up with National
+                            Entrepreneurship Network (NEN),Bengaluru since its inception.The faculty
+                            members of Atharva College of Engineering have been trained by experts 
+                            from NEN to impart entrepreneurship skills among engineering students.
+                        </Intro>
+                        <List>
+                            <Line>
+                                <img src="/assests/about/regular.png" alt="" />
+                                <Content>
+                                    <Title>Regular Meeting</Title>
+                                    <Desc>E-Cell conducts regular meeting regarding planning of workshops, seminars and formation of committee members for various activities.</Desc>
+                                </Content>
+                            </Line>
+                            <Line>
+                                <img src="/assests/about/startup.png" alt="" />
+                                <Content>
+                                    <Title>Generate Start-up</Title>
+                                    <Desc>EMBER has generated numerous start-ups and students have won various prizes at state and national level.</Desc>
+                                </Content>
+                            </Line>
+                            <Line>
+                                <img src="/assests/about/internship.png" alt="" />
+                                <Content>
+                                    <Title>Regular Meeting</Title>
+                                    <Desc>E-Cell also coordinates between student’s venture and junior students who are seeking for internship.</Desc>
+                                </Content>
+                            </Line>
+                        </List>
+                    </Right>
+                </SubWrapper>
+            </Wrapper>                
+            {/* <HeaderBody>
             <HeaderLeft>
                 <img src={Img} alt="" srcset="" />
             </HeaderLeft>
@@ -49,7 +86,7 @@ function About() {
                 <img src={Img} alt="" srcset="" />
 
                 </FooterRight>
-            </Footer>
+            </Footer> */}
         </Container>
     )
 }
@@ -63,9 +100,112 @@ const Container = styled.div`
 const Header = styled.div`
     display: flex;
     justify-content: center;
-    font-size: 1.6em;
+    font-size: 40px;
     font-weight: 600;
-    color: rgb(0, 0, 0, 0.76)
+    color: rgb(0, 0, 0, 0.76);
+`
+
+const Wrapper = styled.div`
+    margin: 32px auto;
+    max-width: 1360px;
+    @media(max-width: 1400px) {
+        margin: 32px 64px
+    }
+    @media(max-width: 560px) {
+        margin: 32px 32px
+    }
+`
+
+const SubWrapper = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+
+    @media(max-width: 1024px) {
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+    }
+
+` 
+
+const Left = styled.img`
+    max-width: 560px;
+    width: 100%;
+    min-width: 360px;
+    height: fit-content;
+    object-fit: cover;
+    @media(max-width: 1024px) {
+        max-width: 100%;
+        min-width: auto;
+    }
+`
+
+const Right = styled.div`
+    width: 50%;
+    min-width: 460px;
+    margin: 0 32px;
+    @media(max-width: 1024px) {
+        margin: 32px 0px;
+        width: 100%;
+        min-width: auto;
+    }
+    @media(max-width: 560px) {
+        margin: 16px 0;
+    }
+`
+
+const Intro = styled.div`
+    max-width: 560px;
+    width: 100%;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: #373B44;
+    @media(max-width: 560px) {
+        font-size: 16px;
+    }
+`
+
+const List = styled.div`
+    margin-top: 16px;
+
+`
+
+const Line = styled.div`
+    display: flex;
+    margin: 16px 0;
+    img {
+        height: 70px;
+        width: 70px;
+        object-fit: cover;
+        margin-right: 16px;
+    }
+`
+
+const Content = styled.div`
+    
+`
+
+const Title = styled.div`
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 29px;
+    color: #000000;   
+    @media(max-width: 560px) {
+        font-size: 18px;
+    }
+`
+
+const Desc = styled.div`
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #6D6D6D;
+    @media(max-width: 560px) {
+        font-size: 16px;
+    }
 `
 
 const HeaderBody = styled.div`
@@ -138,26 +278,26 @@ p{
 `;
 
 
-const List = styled.div`
-margin-top: 20px;
-display: flex;
-flex-direction: column;
+// const List = styled.div`
+// margin-top: 20px;
+// display: flex;
+// flex-direction: column;
 
-li{
+// li{
    
-    list-style: none;
-    font-size: 20px;
-    font-weight: bold;
-    display: block;
-}
+//     list-style: none;
+//     font-size: 20px;
+//     font-weight: bold;
+//     display: block;
+// }
 
 
-p{
-    margin-top: 10px;
-    font-weight: unset;
+// p{
+//     margin-top: 10px;
+//     font-weight: unset;
 
-}
-`
+// }
+// `
 
 const Footer = styled.div`
 min-height: 500px;

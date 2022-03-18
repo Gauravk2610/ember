@@ -92,7 +92,7 @@ const teamList = [
                 'title': 'Gaurav Konde',
                 'img': 'Gaurav.JPG',
                 'post': 'Technical Head',
-                'status': 'Software Developer',
+                'status': null,
                 'email': 'gauravkonde26@gmail.com',
                 'insta': 'https://www.instagram.com/gaurav_konde/',
                 'linkdein': 'https://www.linkedin.com/in/gaurav-konde-51aab6193/',

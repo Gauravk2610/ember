@@ -56,7 +56,7 @@ function Home() {
                         aliqua dolor do amet sint.
                         Velit officia consequat duis
                         enim velit mollit.</p>
-                        <Register>Register Now</Register>
+                        {/* <Register>Register Now</Register> */}
                     </Content>
                     <Play onClick={() => {
                         setPlay(true)
@@ -94,8 +94,9 @@ const Bg = styled.div`
     @media(max-width: 560px) {
         img, video {
             width: 100%;
-            object-fit: contain;
+            object-fit: cover;
             height: auto;
+            min-height: 400px;
         }
     }
 `
@@ -144,6 +145,9 @@ const Content = styled.div`
     }
     @media(max-width: 560px) {
         padding: 0 24px;
+        background: rgba(0, 0, 0, 0.6);
+        justify-content: flex-start;
+        padding-top: 64px;
     }
 
 `

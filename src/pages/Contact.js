@@ -78,6 +78,8 @@ const Container = styled.div`
 const Wrap = styled.form`
     padding: 30px;
     width: 70%;
+    border-radius: 10px;
+
     // background-color: rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
     // color: white;
@@ -128,7 +130,7 @@ const Left = styled.div`
 
     @media(max-width: 560px) {
         input {
-            width: 96%
+            width: 100%
         }
     }
 `
@@ -155,7 +157,9 @@ const Right = styled.div`
     }
     @media(max-width: 560px) {
         textarea {
-            width: 96%;;
+            margin: 10px 0;
+
+            width: 100%;;
         }
     }
 `

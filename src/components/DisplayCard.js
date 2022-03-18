@@ -286,7 +286,7 @@ const Left = styled.img`
     object-fit: cover;
     @media(max-width: 560px) {
         margin: 32px 0;
-        height: 400px;
+        height: 260px;
     }
 `
 
@@ -302,7 +302,10 @@ const Right = styled.div`
     width: 100%;
     min-width: 200px;
     @media(max-width: 860px) {
+        padding-bottom: 32px;
         margin-left: 0px;
+        min-height: auto;
+        height: fit-content;
     }
 `
 
@@ -312,8 +315,8 @@ const Title = styled.div`
     line-height: 47px;
     color: #FFFFFF;
     @media(max-width: 500px) {
-        font-size: 30px;
-        line-height: 37px;
+        font-size: 26px;
+        line-height: 30px;
     }
 `
 
@@ -324,6 +327,11 @@ const Desc = styled.div`
     font-size: 18px;
     line-height: 21px;
     color: #FFFFFF;
+    @media(max-width: 500px) {
+        padding: 2px 0;
+        font-size: 16px;
+        line-height: 19px;
+    }
 `
 
 const Date = styled.div`
@@ -333,6 +341,11 @@ const Date = styled.div`
     font-size: 18px;
     line-height: 21px;
     color: #FFFFFF;
+    @media(max-width: 500px) {
+        padding: 2px 0;
+        font-size: 16px;
+        line-height: 19px;
+    }
 `
 
 const Rate = styled.div`

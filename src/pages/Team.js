@@ -38,10 +38,10 @@ const Header = styled.div`
     }
 
         
-    h2:hover {
+    /* h2:hover {
         letter-spacing: 16px;
         // transform: scale(1.4);
-    }
+    } */
 `
 
 const Divider = styled.div`

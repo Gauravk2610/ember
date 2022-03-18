@@ -17,33 +17,33 @@ function Box({img, count, title}) {
 
     // });    
 
-    // const triggerCounter = () => {
+    const triggerCounter = () => {
 
-    //     const countersection = document.getElementsByClassName('CounterWrap')[0]
-    //     const { pageYOffset } = window;
+        const countersection = document.getElementsByClassName('CounterWrap')[0]
+        const { pageYOffset } = window;
 
         
-    //     const sectionTop = countersection.offsetTop;
-    //     const sectionHeight = countersection.offsetHeight;
+        const sectionTop = countersection.offsetTop;
+        const sectionHeight = countersection.offsetHeight;
 
-    //     if ((pageYOffset >= (sectionTop - sectionHeight/2))) {
-    //             // setCounter(false)
-    //         start()
-    //         window.removeEventListener('scroll', triggerCounter)
+        if ((pageYOffset >= (sectionTop - sectionHeight/2))) {
+                // setCounter(false)
+            // countUpRef.current.click()
+            window.removeEventListener('scroll', triggerCounter)
                 
-    //         // trigger.click()
+            // trigger.click()
 
-    //     }
-    //     // } )
+        }
+        // } )
 
-    // }
+    }
 
-    // useEffect(() => {
-    //     window.addEventListener('scroll', triggerCounter)
-    //     return () => {
-    //         window.removeEventListener('scroll', triggerCounter)
-    //     }
-    // }, [])
+    useEffect(() => {
+        window.addEventListener('scroll', triggerCounter)
+        return () => {
+            window.removeEventListener('scroll', triggerCounter)
+        }
+    }, [])
 
     return (
         <Container>
@@ -51,15 +51,17 @@ function Box({img, count, title}) {
             <Wrap className='CounterWrap'>
             <div>
                 <CountUp duration={2} end={count} >
-                    {({ countUpRef, start }) => (
-                        <VisibilitySensor onChange={start}>
+                    {({ countUpRef, start }) => {
+
+                    return (
+                        <VisibilitySensor partialVisibility={true} intervalCheck={true} scrollCheck={true}  onChange={(isVisible) => isVisible? start() : ''}>
                             <div className='count'>
                                 <span style={{ fontSize: '2.0rem' }} ref={countUpRef} />
                                 <span>+</span>
                             {/* <button  onClick={start}>Start</button> */}
                             </div>
                     </VisibilitySensor> 
-                    )}
+                    )}}
                     </CountUp>
                 <div className='count' ref={countUpRef} style={{fontSize: '2.0em'}} />
             </div>
@@ -79,13 +81,13 @@ export default Box
 const Container = styled.div`
     display: flex;
     flex: 1;
-    min-width: 300px;
-    max-width: 360px;
+    min-width: 250px;
+    max-width: 260px;
     width: 100%;
-    padding: 8px 16px;
+    padding: 8px 24px;
     border-radius: 10px;
     margin: 10px;
-    justify-content: space-evenly;
+    justify-content: space-between;
     border: 1px solid rgb(0, 0, 0, 0.1);
     
     @media(max-width: 1100px) {

@@ -157,10 +157,18 @@ const Container = styled.div`
         object-fit: cover;
         border-radius: 20px 20px 0px 0px;
     }
+    @media(max-width: 560px) {
+        img {
+            height: 200px;
+        }
+    }
 `
 
 const Content = styled.div`
     padding: 20px;
+    @media(max-width: 560px) {
+        padding: 10px 20px;
+    }
 `
 
 const Title = styled.div`
@@ -170,7 +178,9 @@ const Title = styled.div`
     line-height: 35px;
     color: #000000;
     @media(max-width: 560px) {
-        font-size: 24px
+        font-size: 24px;
+        line-height: 30px;
+
     }
 `
 
@@ -183,6 +193,8 @@ const Desc = styled.div`
     color: #818181;
     @media(max-width: 560px) {
         font-size: 16px;
+        margin: 6px 0;
+
     }
 `
 
@@ -191,10 +203,15 @@ const ButtonWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media(max-width: 560px) {
+        margin-top: 16px;
+    }
 `
 
 const Register = styled.button`
-    width: 164px;
+    max-width: 164px;
+    width: 100%;
+    min-width: 130px;
     height: 41px;
     display: flex;
     justify-content: center;
@@ -209,10 +226,20 @@ const Register = styled.button`
     line-height: 21px;
     cursor: pointer;
     color: #FFFFFF;
+
+    @media(max-width: 560px) {
+        font-size: 16px;
+    }
+    
+    @media(max-width: 420px) {
+        max-width: 120px;
+    }
 `
 
 const View = styled.a`
-    width: 164px;
+    max-width: 164px;
+    width: 100%;
+    min-width: 130px;
     height: 41px;
     background: #FFFFFF;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
@@ -225,6 +252,14 @@ const View = styled.a`
     font-size: 18px;
     line-height: 21px;
     color: #000000;
+    
+    @media(max-width: 560px) {
+        font-size: 16px;
+    }
+
+    @media(max-width: 420px) {
+        max-width: 120px;
+    }
 `
 
 const ModalForm = styled.form`

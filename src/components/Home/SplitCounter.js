@@ -8,19 +8,19 @@ function SplitCounter() {
             <Wrap>
                 <Counter>
                     <Box 
-                    img='https://www.misdepartment.com/images/services/remote-server-support.png' 
+                    img='/assests/startups.png' 
                     count={100}
                     title='StartUps'
                     />
                     <Box 
-                    img='https://www.misdepartment.com/images/services/remote-server-support.png' 
+                    img='/assests/students.png' 
                     count={100}
-                    title='StartUps'
+                    title='Students'
                     />
                     <Box 
-                    img='https://www.misdepartment.com/images/services/remote-server-support.png' 
+                    img='/assests/professionals.png' 
                     count={100}
-                    title='StartUps'
+                    title='Professionals'
                     />
                     
                     
@@ -58,9 +58,10 @@ const Counter = styled.div`
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 80%;
+    max-width: 960px;
+    margin: 0 64px;
     justify-content: space-evenly;
-    padding: 20px;
+    padding: 6px;
     background-color: white;
     border-radius: 10px;
     /* box-shadow: 0px 0px 40px white;  */
@@ -68,6 +69,9 @@ const Counter = styled.div`
 
     :hover {
         transform: scale(1.1)
+    }
+    @media(max-width: 460px) {
+        max-width: 300px;
     }
 `
 
