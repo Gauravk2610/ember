@@ -54,7 +54,7 @@ function Box({img, count, title}) {
                     {({ countUpRef, start }) => {
 
                     return (
-                        <VisibilitySensor partialVisibility={true} intervalCheck={true} scrollCheck={true}  onChange={(isVisible) => isVisible? start() : ''}>
+                        <VisibilitySensor partialVisibility={true} intervalCheck={true} scrollCheck={true}  onChange={start}>
                             <div className='count'>
                                 <span style={{ fontSize: '2.0rem' }} ref={countUpRef} />
                                 <span>+</span>

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import ItemList from '../components/Home/ItemList'
 import SplitCounter from '../components/Home/SplitCounter'
 import videoIntro from '../assests/Intro.mp4'
+import Sponsors from '../components/Home/Sponsors'
 
 const eventData = [
     {
@@ -43,12 +44,12 @@ function Home() {
             </Helmet>
             <Intro>
                 <Bg>
-                    <video ref={videoControl} loop muted >
+                    <video ref={videoControl} autoPlay loop muted >
                         <source src={videoIntro} type="video/mp4" />
                     </video>
                     {/* <img src='/assests/home-bg.png' /> */}
                 </Bg>
-                <MainBg show={play}>
+                {/* <MainBg show={play}>
                     <Content>
                         <Title>EMBER</Title>
                         <p>Amet minim mollit non
@@ -56,16 +57,16 @@ function Home() {
                         aliqua dolor do amet sint.
                         Velit officia consequat duis
                         enim velit mollit.</p>
-                        {/* <Register>Register Now</Register> */}
                     </Content>
                     <Play onClick={() => {
                         setPlay(true)
                         videoControl.current.play()
                     }} 
                         show={play}>PLAY <img src="/assests/play.png" alt="play" /></Play>
-                </MainBg>
+                </MainBg> */}
             </Intro>
             <SplitCounter />
+            <Sponsors />
             <ItemList title={'Events'} data={eventData} redirect={'/events'} />
             <ItemList title={'Workshop'} data={eventData} redirect={'/workshop'} />
         </Container>

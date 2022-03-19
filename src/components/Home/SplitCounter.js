@@ -47,7 +47,7 @@ const Wrap = styled.div`
     left: 0;
     right: 0;
     display: flex;
-    margin-top: -5%;
+    margin-top: -2%;
     justify-content: center;
 `
 

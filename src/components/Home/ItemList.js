@@ -31,6 +31,10 @@ const Title = styled.h1`
     line-height: 64px;
     color: #000000;
 
+    @media(max-width: 560px) {
+        font-size: 36px;
+    }
+
 `
 
 const CardWrapper = styled.div`
