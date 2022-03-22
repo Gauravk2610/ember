@@ -15,7 +15,7 @@ const EventList = [
         Tprice: null,
         bg: 'bg-soccer.png',
         img: 'Soccer-bg.png',
-        poster: 'banner-soccer.png'
+        poster: 'RoboSoccer.png'
     },
     {
         title: 'Robo Maze',
@@ -56,7 +56,7 @@ const EventList = [
         Tprice: null,
         bg: 'bg-soccer.png',
         img: 'Shark-bg.png',
-        poster: 'banner-soccer.png'
+        poster: 'SharkTank.png'
     },
 
     {
@@ -84,7 +84,7 @@ const EventList = [
         Tprice: '750',
         bg: 'bg-soccer.png',
         img: 'Soccer-bg.png',
-        poster: 'banner-soccer.png'
+        poster: 'Innovation.png'
     },
 ]
 

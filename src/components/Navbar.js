@@ -41,11 +41,11 @@ function Navbar() {
             'icon': <BusinessCenterRounded />,
             'link': 'initiatives'
         },
-        {
-            'title': 'Workshops',
-            'icon': <GroupWorkRounded />,
-            'link': 'workshops'
-        },
+        // {
+        //     'title': 'Workshops',
+        //     'icon': <GroupWorkRounded />,
+        //     'link': 'workshops'
+        // },
         {
             'title': 'Events',
             'icon': <EventAvailable />,

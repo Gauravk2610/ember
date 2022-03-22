@@ -68,7 +68,7 @@ function Home() {
             <SplitCounter />
             <Sponsors />
             <ItemList title={'Events'} data={eventData} redirect={'/events'} />
-            <ItemList title={'Workshop'} data={eventData} redirect={'/workshop'} />
+            {/* <ItemList title={'Workshop'} data={eventData} redirect={'/workshop'} /> */}
         </Container>
     )
 }
