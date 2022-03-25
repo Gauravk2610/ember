@@ -9,12 +9,12 @@ function SplitCounter() {
                 <Counter>
                     <Box 
                     img='/assests/startups.png' 
-                    count={100}
+                    count={30}
                     title='StartUps'
                     />
                     <Box 
                     img='/assests/students.png' 
-                    count={100}
+                    count={500}
                     title='Students'
                     />
                     <Box 
