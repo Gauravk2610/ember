@@ -40,12 +40,6 @@ const StartupList = [
         desc: 'Dating app Heartconnect, Start-Up operated by Trigbug, has been selected by Facebook for its FbStartprogramme. Heartonnect has partnered with Trigbug, a Mumbai-based IT and marketing consultancy firm, to develop its app and software. (2015-16)',
         date: '2015-16'
     },
-    {
-        img: 'https://www.newhope.com/sites/newhope360.com/files/styles/article_featured_retina/public/startup-investors.png?itok=F7dg8LFW',
-        title: 'Getdeal: Search engine optimized',
-        desc: 'Done by BE Computer students have won FIRST PRIZE in UDAAN 2016 Innovative project competition held at Institute of Industrial & Computer Management & Research ,Pune on 6th Feb 2016 for Innovative project. (2015-16)',
-        date: '2015-16'
-    },
 ]
 
 function Initiatives() {

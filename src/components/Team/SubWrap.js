@@ -7,11 +7,11 @@ const teamList = [
         'title': 'Faculty-in-charge',
         'list': [
             {
-                'title': 'Prof. Garima Gujar',
-                'img': 'Atharva.JPG',
+                'title': 'Prof. Garima Gurjar',
+                'img': 'garima.webp',
                 'post': 'Incharge',
                 'status': null,
-                'email': 'random@gmail.com',
+                'email': 'garimagujar@gmail.com',
                 'insta': null,
                 'linkdein': null,
                 'fb': null,
