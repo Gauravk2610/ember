@@ -11,9 +11,9 @@ const teamList = [
                 'img': 'garima.webp',
                 'post': 'Incharge',
                 'status': null,
-                'email': 'garimagujar@gmail.com',
+                'email': 'garimagurjar@atharvacoe.ac.in',
                 'insta': null,
-                'linkdein': null,
+                'linkdein': 'https://www.linkedin.com/in/garima-gurjar-671b96217/',
                 'fb': null,
                 'tweet': null,
             }
