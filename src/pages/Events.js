@@ -27,7 +27,7 @@ const EventList = [
         Sprice:  null,
         Tprice: null,
         bg: 'bg-soccer.png',
-        img: 'Soccer-bg.png',
+        img: 'robomaze-bg.png',
         poster: 'Robomaze.png'
     },
 
@@ -69,7 +69,7 @@ const EventList = [
         Sprice:  null,
         Tprice: null,
         bg: 'bg-soccer.png',
-        img: 'Soccer-bg.png',
+        img: 'business-bg.jpeg',
         poster: 'Businessmela.png'
     },
 
@@ -83,7 +83,7 @@ const EventList = [
         Sprice: '1000',
         Tprice: '750',
         bg: 'bg-soccer.png',
-        img: 'Soccer-bg.png',
+        img: 'innovation-bg.jpeg',
         poster: 'Innovation.png'
     },
 ]

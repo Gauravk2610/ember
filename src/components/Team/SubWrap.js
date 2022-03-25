@@ -239,7 +239,7 @@ const teamList = [
             },
             {
                 'title': 'Om Sawant',
-                'img': 'Om.JPG',
+                'img': 'Om.jpg',
                 'post': 'Assistant Digital Creative Head',
                 'status': null,
                 'email': 'omsawant22670@gmail.com',                
@@ -250,7 +250,7 @@ const teamList = [
             },
             {
                 'title': 'Amrit Suthar',
-                'img': 'Amrit.PNG',
+                'img': 'Amrit.png',
                 'post': 'Assistant Digital Creative Head',
                 'status': null,
                 'email': 'amritsuthar19@gmail.com',                
@@ -262,7 +262,7 @@ const teamList = [
             
             {
                 'title': 'Prachi Sangar',
-                'img': 'Prachi.JPG',
+                'img': 'Prachi.jpg',
                 'post': 'Assistant Public Relations Head',
                 'status': null,
                 'email': 'prachisangar31@gmail.com',                

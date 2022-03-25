@@ -150,7 +150,7 @@ const Left = styled.div`
         width: 100%;
         max-width: 450px;
         height: 250px;
-        object-fit: cover;
+        object-fit: contain;
         border-radius: 20px;
     }
 

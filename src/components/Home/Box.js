@@ -52,11 +52,11 @@ function Box({img, count, title}) {
             <div>
                 <CountUp duration={2} end={count} >
                     {({ countUpRef, start }) => {
-
+                    start()
                     return (
                         <VisibilitySensor partialVisibility={true} intervalCheck={true} scrollCheck={true}  onChange={start}>
                             <div className='count'>
-                                <span style={{ fontSize: '2.0rem' }} ref={countUpRef} />
+                                <span style={{ fontSize: '2.0rem' }}>{count}</span>
                                 <span>+</span>
                             {/* <button  onClick={start}>Start</button> */}
                             </div>
