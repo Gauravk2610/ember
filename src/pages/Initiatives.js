@@ -19,7 +19,7 @@ const StartupList = [
     {
         img: '/assests/stech.jpeg',
         title: 'STech',
-        desc: 'Done by BE student had won FIRST PRIZE in UDAAN 2017 project competition held at Institute of Industrial & Computer Management & Research, Pune on 25 Feb 2017 for Innovative project. (2016-17)',
+        desc: 'Stech is a startup founded by Sandeep Vishwakarma a project based company setup in Mumbai',
         date: '2019-20'
     },
     {
